@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace VulnerableProject
+namespace Vuln_Test_Csharp
 {
     class Program
     {

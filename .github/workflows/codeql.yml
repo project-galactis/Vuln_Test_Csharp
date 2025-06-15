@@ -28,7 +28,9 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
+      env:
+        ACTIONS_STEP_DEBUG: true
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4

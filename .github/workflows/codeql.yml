@@ -53,6 +53,7 @@ jobs:
         category: "/language:${{matrix.language}}"
   
   export-codeql-alerts:
+    needs: analyze
     runs-on: ubuntu-latest
     steps:
       - name: Export CodeQL Alerts to JSON

@@ -51,3 +51,23 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+  
+  export-codeql-alerts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Export CodeQL Alerts to JSON
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+          curl -s -H "Authorization: token $GH_TOKEN" \
+               -H "Accept: application/vnd.github+json" \
+               "https://api.github.com/repos/$REPO/code-scanning/alerts?per_page=100" \
+               -o codeql-alerts.json
+
+      - name: Upload CodeQL Alerts artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-alerts
+          path: codeql-alerts.json
+    

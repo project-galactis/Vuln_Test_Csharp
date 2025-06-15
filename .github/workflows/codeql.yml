@@ -57,7 +57,7 @@ jobs:
     steps:
       - name: Export CodeQL Alerts to JSON
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           REPO="${{ github.repository }}"
           curl -s -H "Authorization: token $GH_TOKEN" \

@@ -11,9 +11,4 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Program.cs" />
-  </ItemGroup>
-
 </Project>

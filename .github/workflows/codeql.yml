@@ -33,7 +33,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0' # or whatever version your project targets
+        dotnet-version: '8.0'
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
@@ -43,7 +43,7 @@ jobs:
         queries: +security-and-quality
 
     - name: Build project
-      run: dotnet build VulnerableProject.csproj --configuration Release
+      run: dotnet build Vuln_Test_Csharp.csproj --configuration Release
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
